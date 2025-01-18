@@ -31,7 +31,6 @@ class Image_laundary(QWidget):
         self.setWindowIcon(QIcon("laundry_icon.webp"))
         self.setWindowTitle("이미지 세탁기 - 메타데이터 중복 해제")
         self.setup_main_wnd()
-        self.show()
 
     def setup_main_wnd(self):
         hello_label = QLabel(self)
@@ -59,5 +58,6 @@ if __name__ == '__main__':
     # Event Loop 등을 위한 QApplication instance 생성.
     app = QApplication(sys.argv)
     window = Image_laundary()
+    window.show()
     # Event Loop 시작.
     sys.exit(app.exec())

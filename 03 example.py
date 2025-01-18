@@ -14,7 +14,7 @@ from PySide6.QtWidgets import (QApplication, QWidget,
 # ================================
 # define classes for this program
 
-class MW(QWidget):
+class MainWindow(QWidget):
     def __init__(self):
         """ Constructor for Main Window Class """
         super().__init__()
@@ -22,10 +22,13 @@ class MW(QWidget):
 
     def initialize_ui(self):
         """setup GUI application."""
-        self.setGeometry(200, 100, 400, 200)
-        self.setWindowTitle("Main Window in PyQt")
+        self.setup_title()
         self.setup_main_wnd()
         self.show() # Display the window on the screen
+
+    def setup_title(self):
+        self.setGeometry(200, 100, 400, 200)
+        self.setWindowTitle("Main Window in PyQt")        
 
     def setup_main_wnd(self):
         """setup the main window."""
@@ -48,6 +51,6 @@ if __name__ == '__main__':
     # Event Loop 등을 위한 QApplication instance 생성.
     app = QApplication(sys.argv)
     # main window 생성 및 show 호출.
-    window = MW()
+    window = MainWindow()
     # Event Loop 시작.
     sys.exit(app.exec())
